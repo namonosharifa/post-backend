@@ -1,4 +1,4 @@
-const Post = require("../models/post")
+const Post = require("../models/post");
 
 const createPost = async (req, res) => {
     const post = req.body
@@ -50,7 +50,7 @@ const updatePost = async (req, res) => {
 }
 
 // Delete Posts
-exports.deletePost = async (req, res) => {
+const deletePost = async (req, res) => {
     try {
         const postId = req.params.id;
         const userId = req.userId; 
@@ -72,5 +72,6 @@ const post = await Post.findById(postId);
 module.exports = { 
     createPost,
     getAllPosts,
-    updatePost
+    updatePost,
+    deletePost
 }
